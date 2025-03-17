@@ -59,11 +59,8 @@ public partial class ListaProduto : ContentPage
         {
             try
             {
-                Console.WriteLine($"Removendo produto: {produto.Id}"); // Log antes da exclusão
                 await App.Db.Delete(produto);
-                Console.WriteLine($"Produto removido do banco de dados: {produto.Id}"); // Log após a exclusão do banco
                 lista.Remove(produto);
-                Console.WriteLine($"Produto removido da lista: {produto.Id}"); // Log após a remoção da lista
             }
             catch (Exception ex)
             {
